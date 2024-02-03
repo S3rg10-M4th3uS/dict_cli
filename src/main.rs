@@ -1,6 +1,9 @@
+use crate::parsing::Response;
 use anyhow::Result;
 use clap::Parser;
 use reqwest::blocking::get;
+
+mod parsing;
 
 #[derive(Parser)]
 struct Args {
@@ -15,6 +18,8 @@ fn main() -> Result<()> {
     );
 
     let body = get(url)?.text()?;
-    println!("{:?}", body);
+    let responses: Response = serde_json::from_str(&body)?;
+
+    println!("{:?}", responses);
     Ok(())
 }
