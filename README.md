@@ -2,6 +2,7 @@
 # Dictionary in the Command-Line!
 
 Get response from an dictionary api from the command line interface using the binary!
+Link for the api: https://dictionaryapi.dev/
 
 
 ## Usage/Examples
